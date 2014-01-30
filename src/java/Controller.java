@@ -36,7 +36,7 @@ public class Controller extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+           
             String name = request.getParameter("name");
             
             WelcomeService ws = new WelcomeService(name);
@@ -75,22 +75,23 @@ public class Controller extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            //Gets the value from name in the form
-            String name = request.getParameter("name");
-            //Starts a new welcome Service
-            WelcomeService ws = new WelcomeService(name);
-            //Gets the welcome msg that was made
-            String welcomeMsg = ws.getWelcomeMsg();
-            //Creates the list that was needed
-            List newList = new ArrayList();
-            //Adds the welcome msg to the list
-            newList.add(welcomeMsg);
-            //Sends the list to the result page.
-            request.setAttribute("msg", newList);
-            RequestDispatcher view =
-                request.getRequestDispatcher(RESULT_PAGE);
-        view.forward(request, response);
         processRequest(request, response);
+//            //Gets the value from name in the form
+//            String name = request.getParameter("name");
+//            //Starts a new welcome Service
+//            WelcomeService ws = new WelcomeService(name);
+//            //Gets the welcome msg that was made
+//            String welcomeMsg = ws.getWelcomeMsg();
+//            //Creates the list that was needed
+//            List newList = new ArrayList();
+//            //Adds the welcome msg to the list
+//            newList.add(welcomeMsg);
+//            //Sends the list to the result page.
+//            request.setAttribute("msg", newList);
+//            RequestDispatcher view =
+//                request.getRequestDispatcher(RESULT_PAGE);
+//        view.forward(request, response);
+//        processRequest(request, response);
     }
 
     /**

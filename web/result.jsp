@@ -15,14 +15,12 @@
     </head>
     <body>
         <%
-            List result = (List)request.getAttribute("msg");
-        Iterator it = result.iterator();
-        while(it.hasNext()) {
-            // Notice we're outputting some HTML. Is that a good idea?
-            // Also, notice we do not cast the object returned by the
-            // iterator to a String. Why?
-            out.print(it.next());
-        }
+        
+        String msg = "No msg returned, input invalid.";
+        Object objMsg = request.getAttribute("msg");
+        msg = objMsg == null ? msg :objMsg.toString();
+       
     %>
+    <%= msg%>
     </body>
 </html>
