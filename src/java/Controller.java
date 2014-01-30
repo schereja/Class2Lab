@@ -20,8 +20,8 @@ import model.WelcomeService;
  *
  * @author schereja
  */
-@WebServlet(urlPatterns = {"/greeter"})
-public class controller extends HttpServlet {
+@WebServlet(urlPatterns = {"/greeter"}, name = "greeter")
+public class Controller extends HttpServlet {
  private static final String RESULT_PAGE = "result.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
